@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Manrope', sans-serif;
+    content: '';
+    display: block;
+    width: 100%;
+    /* url(../assets/background-img.png) */
+    background: linear-gradient(to bottom, rgba(20,26,49,1) 0%, rgba(20,26,49,0) 40%, rgba(20,26,49,1) 100%), url(../assets/background-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+}
+
+.loading-screen {
+    background-color: rgb(0, 0, 0);
+    width:100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .root {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -76,6 +92,15 @@ body {
     height: min-content;
     padding: 0px;
     width: min-content;
+    border-top: 1px solid #fff;
+    margin: 20px 0;
+}
+
+.img-cont {
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    padding: 20px 0;
+    margin-bottom: 50px 0;
 }
 
 .prompt-box {
@@ -413,3 +438,53 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+      
+.center {
+    display: flex;
+    justify-content: center;     
+    flex-flow: row wrap; /*flex-direction + flex-wrapの記述が可能*/
+    max-width:80vw;
+    text-align: center;
+}
+
+.center .twitter-tweet{
+    margin: 5px;
+}
+
+.center img {
+    object-fit: cover;
+    max-width:150px;
+    max-height:150px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
+.center img:hover {
+    animation: zoom-in-anim 1s;
+    animation-fill-mode: forwards;
+}
+
+.center .selected img{
+    border: 1px #F32E98 solid;
+    transform: scale(1.05);
+}
+
+
+.target-title {
+    color: #FFF;
+}
+.center .selected .target-title{
+    color: #F32E98;
+}
+
+@keyframes zoom-in-anim {
+	0% {
+	transform: scale(1);
+	}
+	100% {
+	transform: scale(1.05);
+	}
+}
+
